@@ -51,21 +51,6 @@ const Home = () => {
 
       <Row>
         <Col>
-          <ListGroup style={{ cursor: "pointer" }}>
-            {categories.map((category) => (
-              <ListGroup.Item
-                key={category.id}
-                onClick={() => selectCategory(category.id)}
-              >
-                {category.name}
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
           <InputGroup className="mb-3">
             <FormControl
               placeholder="Recipient's product"
@@ -82,6 +67,21 @@ const Home = () => {
               Button
             </Button>
           </InputGroup>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <ListGroup style={{ cursor: "pointer" }}>
+            {categories.map((category) => (
+              <ListGroup.Item
+                key={category.id}
+                onClick={() => selectCategory(category.id)}
+              >
+                {category.name}
+              </ListGroup.Item>
+            ))}
+          </ListGroup>
         </Col>
       </Row>
 
