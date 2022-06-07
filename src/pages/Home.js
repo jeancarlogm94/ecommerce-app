@@ -39,7 +39,7 @@ const Home = () => {
     dispatch(filterHeadline(search));
   };
 
-  // console.log(categories);
+  console.log(products);
 
   const selectCategory = (id) => {
     dispatch(filterCategory(id));
@@ -88,13 +88,13 @@ const Home = () => {
       <Row xs={1} md={2} lg={3} className="g-4">
         {products.map((productItem) => (
           <Col key={productItem.id}>
-            <Card.Title>{productItem.title}</Card.Title>
-            <Card.Text>{productItem.price}</Card.Text>
             <Card
               style={{ cursor: "pointer" }}
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
-              <Card.Img variant="top" src={productItem.productImgs} />
+              <Card.Title>{productItem.title}</Card.Title>
+              <Card.Text>{productItem.price}</Card.Text>
+              <Card.Img variant="top" src={productItem.productImgs[2]} />
             </Card>
           </Col>
         ))}
