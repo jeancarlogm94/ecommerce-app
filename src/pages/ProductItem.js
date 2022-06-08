@@ -3,15 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { filterCategory } from "../store/slices/products.slices";
-import {
-  // Button,
-  Card,
-  Col,
-  // FormControl,
-  // InputGroup,
-  // ListGroup,
-  Row,
-} from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 
 const Product = () => {
   const [productItem, setProductItem] = useState({});
@@ -37,7 +29,7 @@ const Product = () => {
       });
   }, [dispatch, id]);
 
-  console.log(productItem);
+  // console.log(productItem);
 
   return (
     <Row>

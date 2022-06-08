@@ -4,7 +4,10 @@ import { useDispatch } from "react-redux";
 import { getCart } from "../store/slices/cart.slice";
 
 const NavBar = () => {
-  // const logOut = () =>
+  const logOut = () => {
+    localStorage.setItem("token", "");
+    alert("Closed session");
+  };
 
   const dispatch = useDispatch();
 
@@ -24,7 +27,9 @@ const NavBar = () => {
               <Nav.Link href="/#/login">Login</Nav.Link>
               <Nav.Link href="/#/purchases">Purchases</Nav.Link>
               <Nav.Link href="/#/cart">Cart</Nav.Link>
-              <Nav.Link href="/#/cart">Log Out</Nav.Link>
+              <Nav.Link href="/#/login" onClick={logOut}>
+                Log Out
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

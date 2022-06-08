@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPurchases } from "../store/slices/purchases.slices";
+import { Col, ListGroup, Row } from "react-bootstrap";
 
 const Purchases = () => {
   const dispatch = useDispatch();
@@ -14,20 +15,22 @@ const Purchases = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Purchases</h1>
-      <ul>
+    <Row>
+      <Col>
         {purchases.map((purchase) => (
-          <li>
+          <ListGroup key={purchase.id} style={{ cursor: "pointer" }}>
             {purchase.cart.products.map((product) => (
-              <div onClick={() => navigate(`/products/${product.id}`)}>
+              <ListGroup.Item
+                key={product.id}
+                onClick={() => navigate(`/products/${product.id}`)}
+              >
                 {product.title}
-              </div>
+              </ListGroup.Item>
             ))}
-          </li>
+          </ListGroup>
         ))}
-      </ul>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

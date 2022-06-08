@@ -19,12 +19,12 @@ const Login = () => {
         // console.log(res.data.data.token);
         localStorage.setItem("token", res.data.data.token);
         navigate("/");
-        alert("Sesion iniciada correctamente");
+        alert("Logged in");
       })
       .catch((error) => {
         // console.log(error.response);
         if (error.response.status === 404) {
-          alert("Credenciales incorrectas");
+          alert("Wrong credentials");
         }
       });
     console.log(data);
