@@ -47,7 +47,7 @@ const Login = () => {
               // "dark",
             ].map((variant) => (
               <Alert key={variant} variant={variant}>
-                <Alert.Heading>Test Data</Alert.Heading>
+                <Alert.Heading>Test data</Alert.Heading>
                 <p>Email: mason@gmail.com</p>
                 <p>Password: mason1234</p>
               </Alert>
