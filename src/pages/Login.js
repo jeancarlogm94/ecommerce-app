@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
@@ -35,6 +35,25 @@ const Login = () => {
       <Card style={{ maxWidth: "500px" }} className="mx-auto">
         <Card.Body>
           <h2>Login</h2>
+          <>
+            {[
+              // "primary",
+              // "secondary",
+              // "success",
+              // "danger",
+              // "warning",
+              // "info",
+              "light",
+              // "dark",
+            ].map((variant) => (
+              <Alert key={variant} variant={variant}>
+                <Alert.Heading>Test Data</Alert.Heading>
+                <p>Email: mason@gmail.com</p>
+                <p>Password: mason1234</p>
+              </Alert>
+            ))}
+          </>
+
           <Form onSubmit={handleSubmit(submit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -43,9 +62,6 @@ const Login = () => {
                 type="email"
                 placeholder="Enter email"
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -57,7 +73,7 @@ const Login = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
+              {/* <Form.Check type="checkbox" label="Check me out" /> */}
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit
