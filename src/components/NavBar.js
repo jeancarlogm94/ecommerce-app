@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { getCart } from "../store/slices/cart.slice";
 
 const NavBar = () => {
+  // const logOut = () =>
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCart());
+  }, [dispatch]);
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -14,6 +24,7 @@ const NavBar = () => {
               <Nav.Link href="/#/login">Login</Nav.Link>
               <Nav.Link href="/#/purchases">Purchases</Nav.Link>
               <Nav.Link href="/#/cart">Cart</Nav.Link>
+              <Nav.Link href="/#/cart">Log Out</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

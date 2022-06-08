@@ -22,7 +22,7 @@ export const getPurchases = () => (dispatch) => {
       "https://ecommerce-api-react.herokuapp.com/api/v1/purchases",
       getConfig()
     )
-    .then((res) => dispatch(setPurchases(res.data)))
+    .then((res) => dispatch(setPurchases(res.data.data.purchases)))
     .finally(() => dispatch(setIsloading(false)));
 };
 
