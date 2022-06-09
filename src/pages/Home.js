@@ -86,8 +86,8 @@ const Home = () => {
           <Col key={productItem.id}>
             <Card
               style={{
-                maxWidth: "200px",
-                Height: "300px",
+                maxWidth: "250px",
+                Height: "400px",
                 cursor: "pointer",
               }}
               onClick={() => navigate(`/products/${productItem.id}`)}
