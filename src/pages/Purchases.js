@@ -14,17 +14,23 @@ const Purchases = () => {
     dispatch(getPurchases());
   }, [dispatch]);
 
+  // console.log(purchases);
+
   return (
     <Row>
       <Col>
         {purchases.map((purchase) => (
           <ListGroup key={purchase.id} style={{ cursor: "pointer" }}>
-            {purchase.cart.products.map((product) => (
+            {purchase.cart.products.map((purchase) => (
               <ListGroup.Item
-                key={product.id}
-                onClick={() => navigate(`/products/${product.id}`)}
+                key={purchase.id}
+                onClick={() => navigate(`/products/${purchase.id}`)}
               >
-                {product.title}
+                {purchase.title}
+                <ListGroup.Item>Price {purchase.price}</ListGroup.Item>
+                <ListGroup.Item>
+                  Quantity {purchase.productsInCart.quantity}
+                </ListGroup.Item>
               </ListGroup.Item>
             ))}
           </ListGroup>

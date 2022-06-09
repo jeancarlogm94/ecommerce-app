@@ -85,14 +85,27 @@ const Home = () => {
         {products.map((productItem) => (
           <Col key={productItem.id}>
             <Card
-              style={{ cursor: "pointer" }}
+              style={{
+                maxWidth: "200px",
+                Height: "300px",
+                cursor: "pointer",
+              }}
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
               <Card.Img
-                style={{ maxWidth: "250PX", maxHeight: "500px" }}
+                style={{ width: "auto", height: "auto" }}
                 variant="top"
-                src={productItem.productImgs[2]}
+                src={productItem.productImgs}
               />
+            </Card>
+            <Card
+              style={{
+                maxWidth: "200px",
+                Height: "500px",
+                cursor: "pointer",
+              }}
+              onClick={() => navigate(`/products/${productItem.id}`)}
+            >
               <Card.Title>{productItem.title}</Card.Title>
               <Card.Text>Price {productItem.price}</Card.Text>
             </Card>

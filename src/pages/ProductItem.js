@@ -8,7 +8,7 @@ import { addToCart } from "../store/slices/cart.slice";
 
 const Product = () => {
   const [productItem, setProductItem] = useState({});
-  const [quantity, setQuantity] = useState("");
+  const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -48,14 +48,14 @@ const Product = () => {
           <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
             <Card.Title>{productItem.title}</Card.Title>
             <Card.Img
-              style={{ maxWidth: "200PX", maxHeight: "400px" }}
+              style={{ width: "200PX", maxHeight: "400px" }}
               variant="top"
               src={productItem.productImgs}
             />
             <Card.Text>Price {productItem.price}</Card.Text>
             <input
               type="number"
-              placeholder="quantity"
+              placeholder="Quantity"
               onChange={(e) => setQuantity(e.target.value)}
               value={quantity}
             ></input>
