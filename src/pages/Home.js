@@ -95,12 +95,12 @@ const Home = () => {
               <Card.Img
                 style={{ width: "auto", height: "auto" }}
                 variant="top"
-                src={productItem.productImgs}
+                src={productItem.productImgs[1]}
               />
             </Card>
             <Card
               style={{
-                maxWidth: "200px",
+                maxWidth: "250px",
                 Height: "500px",
                 cursor: "pointer",
               }}
