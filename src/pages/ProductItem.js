@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { filterCategory } from "../store/slices/products.slices";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { addToCart } from "../store/slices/cart.slice";
 
 const Product = () => {
   const [productItem, setProductItem] = useState({});
+  const [quantity, setQuantity] = useState("");
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -31,14 +33,35 @@ const Product = () => {
 
   // console.log(productItem);
 
+  const addCart = () => {
+    const cart = {
+      id,
+      quantity,
+    };
+    dispatch(addToCart(cart));
+  };
+
   return (
     <Row>
       <Col>
-        <Card.Title>{productItem.title}</Card.Title>
-        <Card.Text>{productItem.price}</Card.Text>
         <Card>
-          <Card.Img variant="top" src={productItem.productImgs} />
-          <Card.Body>
+          <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
+            <Card.Title>{productItem.title}</Card.Title>
+            <Card.Img
+              style={{ maxWidth: "200PX", maxHeight: "400px" }}
+              variant="top"
+              src={productItem.productImgs}
+            />
+            <Card.Text>Price {productItem.price}</Card.Text>
+            <input
+              type="number"
+              placeholder="quantity"
+              onChange={(e) => setQuantity(e.target.value)}
+              value={quantity}
+            ></input>
+            <Button variant="dark" onClick={addCart}>
+              Add to Cart
+            </Button>
             <Card.Text>{productItem.description}</Card.Text>
           </Card.Body>
         </Card>

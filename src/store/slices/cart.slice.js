@@ -5,7 +5,7 @@ import { setIsloading } from "./isLoading.Slice";
 
 export const mySlice = createSlice({
   name: "cart",
-  initialState: {},
+  initialState: [],
   reducers: {
     setCart: (state, action) => {
       return action.payload;
@@ -21,6 +21,21 @@ export const getCart = () => (dispatch) => {
     .get("https://ecommerce-api-react.herokuapp.com/api/v1/cart", getConfig())
     .then((res) => dispatch(setCart(res.data.data.cart.products)))
     .finally(() => dispatch(setIsloading(false)));
+};
+
+export const addToCart = (cart) => (dispatch) => {
+  dispatch(setIsloading(true));
+  return (
+    axios
+      .post(
+        "https://ecommerce-api-react.herokuapp.com/api/v1/cart",
+        cart,
+        getConfig()
+      )
+      // .catch((error) => console.log(error.response))
+      .then(() => dispatch(getCart()))
+      .finally(() => dispatch(setIsloading(false)))
+  );
 };
 
 export default mySlice.reducer;

@@ -34,7 +34,7 @@ const Login = () => {
     <div>
       <Card style={{ maxWidth: "500px" }} className="mx-auto">
         <Card.Body>
-          <h2>Login</h2>
+          <h2 style={{ textAlign: "center" }}>Login</h2>
           <>
             {[
               // "primary",
@@ -43,10 +43,14 @@ const Login = () => {
               // "danger",
               // "warning",
               // "info",
-              "light",
-              // "dark",
+              // "light",
+              "dark",
             ].map((variant) => (
-              <Alert key={variant} variant={variant}>
+              <Alert
+                style={{ textAlign: "center" }}
+                key={variant}
+                variant={variant}
+              >
                 <Alert.Heading>Test data</Alert.Heading>
                 <p>Email: mason@gmail.com</p>
                 <p>Password: mason1234</p>
@@ -75,7 +79,7 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               {/* <Form.Check type="checkbox" label="Check me out" /> */}
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="dark" type="submit">
               Submit
             </Button>
           </Form>

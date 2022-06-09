@@ -53,17 +53,13 @@ const Home = () => {
         <Col>
           <InputGroup className="mb-3">
             <FormControl
-              placeholder="Recipient's product"
-              aria-label="Recipient's product"
+              placeholder="Search product"
+              aria-label="Search product"
               aria-describedby="basic-addon2"
               onChange={(e) => setSearch(e.target.value)}
               value={search}
             />
-            <Button
-              variant="outline-secondary"
-              id="button-addon2"
-              onClick={filterNews}
-            >
+            <Button variant="dark" id="button-addon2" onClick={filterNews}>
               Button
             </Button>
           </InputGroup>
@@ -92,9 +88,13 @@ const Home = () => {
               style={{ cursor: "pointer" }}
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
+              <Card.Img
+                style={{ maxWidth: "250PX", maxHeight: "500px" }}
+                variant="top"
+                src={productItem.productImgs[2]}
+              />
               <Card.Title>{productItem.title}</Card.Title>
-              <Card.Text>{productItem.price}</Card.Text>
-              <Card.Img variant="top" src={productItem.productImgs[2]} />
+              <Card.Text>Price {productItem.price}</Card.Text>
             </Card>
           </Col>
         ))}
