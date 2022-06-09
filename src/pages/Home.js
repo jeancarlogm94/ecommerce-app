@@ -95,7 +95,7 @@ const Home = () => {
               <Card.Img
                 style={{ width: "auto", height: "auto" }}
                 variant="top"
-                src={productItem.productImgs[1]}
+                src={productItem.productImgs}
               />
             </Card>
             <Card
