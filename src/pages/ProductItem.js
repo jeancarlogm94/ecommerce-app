@@ -46,7 +46,7 @@ const Product = () => {
       <Col>
         <Card>
           <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
-            <Card.Title>{productItem.title}</Card.Title>
+            <Card.Title variant="info">{productItem.title}</Card.Title>
             <Card.Img
               style={{ width: "200PX", maxHeight: "400px" }}
               variant="top"

@@ -54,6 +54,7 @@ const Home = () => {
               <ListGroup.Item
                 key={category.id}
                 onClick={() => selectCategory(category.id)}
+                // variant="dark"
               >
                 {category.name}
               </ListGroup.Item>

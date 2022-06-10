@@ -30,7 +30,7 @@ const Purchases = () => {
                     onClick={() => navigate(`/products/${purchaseCart.id}`)}
                   >
                     {/* <ListGroupItem>{purchaseCart.title}</ListGroupItem> */}
-                    <ListGroupItem>
+                    <ListGroupItem variant="info">
                       {purchaseCart.title}
                       <DatePurchase purchase={purchase}></DatePurchase>
                     </ListGroupItem>
