@@ -53,15 +53,29 @@ const Product = () => {
               src={productItem.productImgs}
             />
             <Card.Text>Price {productItem.price}</Card.Text>
+            <button
+              onClick={() => setQuantity((decrement) => decrement - 1)}
+              disabled={quantity <= 1}
+            >
+              -
+            </button>
             <input
-              style={{ margin: "10px", borderRadius: "5px", width: "50px" }}
+              style={{
+                margin: "10px",
+                borderRadius: "5px",
+                width: "50px",
+                textAlign: "center",
+              }}
               type="number"
               onChange={(e) => setQuantity(e.target.value)}
               value={quantity}
             ></input>
+            <button onClick={() => setQuantity((increment) => increment + 1)}>
+              +
+            </button>
             <Button
               style={{ margin: "10px", width: "200px" }}
-              variant="dark"
+              variant="info"
               onClick={addCart}
             >
               Add to Cart

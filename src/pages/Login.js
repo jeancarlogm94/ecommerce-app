@@ -42,18 +42,20 @@ const Login = () => {
               // "success",
               // "danger",
               // "warning",
-              // "info",
+              "info",
               // "light",
-              "dark",
+              // "dark",
             ].map((variant) => (
               <Alert
                 style={{ textAlign: "center" }}
                 key={variant}
                 variant={variant}
               >
-                <Alert.Heading>Test data</Alert.Heading>
-                <p>Email: mason@gmail.com</p>
-                <p>Password: mason1234</p>
+                <Alert.Heading style={{ textAlign: "center" }}>
+                  Test data
+                </Alert.Heading>
+                <h6> Email: mason@gmail.com</h6>
+                <h6>Password: mason1234</h6>
               </Alert>
             ))}
           </>
@@ -79,7 +81,7 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               {/* <Form.Check type="checkbox" label="Check me out" /> */}
             </Form.Group>
-            <Button variant="dark" type="submit">
+            <Button variant="info" type="submit">
               Submit
             </Button>
           </Form>

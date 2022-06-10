@@ -72,7 +72,7 @@ const Home = () => {
               onChange={(e) => setSearch(e.target.value)}
               value={search}
             />
-            <Button variant="dark" id="button-addon2" onClick={filterNews}>
+            <Button variant="info" id="button-addon2" onClick={filterNews}>
               Button
             </Button>
           </InputGroup>

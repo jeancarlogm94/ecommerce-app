@@ -30,7 +30,7 @@ const Cart = ({ show, handleClose, handleShow }) => {
                 </Card.Text>
               </ListGroup.Item>
             ))}
-            <Button variant="dark" onClick={() => dispatch(buy())}>
+            <Button variant="info" onClick={() => dispatch(buy())}>
               Add Cart
             </Button>
           </ListGroup>
