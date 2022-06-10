@@ -47,7 +47,20 @@ const Home = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Products</h1>
+      <Row>
+        <Col>
+          <ListGroup style={{ cursor: "pointer" }}>
+            {categories.map((category) => (
+              <ListGroup.Item
+                key={category.id}
+                onClick={() => selectCategory(category.id)}
+              >
+                {category.name}
+              </ListGroup.Item>
+            ))}
+          </ListGroup>
+        </Col>
+      </Row>
 
       <Row>
         <Col>
@@ -63,21 +76,6 @@ const Home = () => {
               Button
             </Button>
           </InputGroup>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <ListGroup style={{ cursor: "pointer" }}>
-            {categories.map((category) => (
-              <ListGroup.Item
-                key={category.id}
-                onClick={() => selectCategory(category.id)}
-              >
-                {category.name}
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
         </Col>
       </Row>
 
