@@ -86,21 +86,28 @@ const Home = () => {
           <Col key={productItem.id}>
             <Card
               style={{
-                maxWidth: "250px",
-                Height: "400px",
+                width: "auto",
+                height: "auto",
+                maxHeight: "400px",
+                maxWidth: "200px",
                 cursor: "pointer",
               }}
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
               <Card.Img
-                style={{ width: "auto", height: "auto" }}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  maxHeight: "400px",
+                  maxWidth: "200px",
+                }}
                 variant="top"
                 src={productItem.productImgs}
               />
             </Card>
             <Card
               style={{
-                maxWidth: "250px",
+                maxWidth: "200px",
                 Height: "500px",
                 cursor: "pointer",
               }}

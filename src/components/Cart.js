@@ -1,11 +1,13 @@
 import React from "react";
-import { Card, ListGroup, Offcanvas } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { Button, Card, ListGroup, Offcanvas } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { buy } from "../store/slices/cart.slice";
 
 const Cart = ({ show, handleClose, handleShow }) => {
   const cartProducts = useSelector((state) => state.cart);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -28,6 +30,9 @@ const Cart = ({ show, handleClose, handleShow }) => {
                 </Card.Text>
               </ListGroup.Item>
             ))}
+            <Button variant="dark" onClick={() => dispatch(buy())}>
+              Add Cart
+            </Button>
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>
