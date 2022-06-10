@@ -54,12 +54,16 @@ const Product = () => {
             />
             <Card.Text>Price {productItem.price}</Card.Text>
             <input
+              style={{ margin: "10px", borderRadius: "5px", width: "50px" }}
               type="number"
-              placeholder="Quantity"
               onChange={(e) => setQuantity(e.target.value)}
               value={quantity}
             ></input>
-            <Button variant="dark" onClick={addCart}>
+            <Button
+              style={{ margin: "10px", width: "200px" }}
+              variant="dark"
+              onClick={addCart}
+            >
               Add to Cart
             </Button>
             <Card.Text>{productItem.description}</Card.Text>

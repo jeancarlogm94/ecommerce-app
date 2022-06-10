@@ -47,7 +47,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1 style={{ textAlign: "center" }}>Products</h1>
 
       <Row>
         <Col>
@@ -81,7 +81,7 @@ const Home = () => {
         </Col>
       </Row>
 
-      <Row xs={1} md={2} lg={3} className="g-4">
+      <Row style={{ margin: "10px" }} xs={1} md={2} lg={4} className="g-4">
         {products.map((productItem) => (
           <Col key={productItem.id}>
             <Card
