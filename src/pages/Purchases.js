@@ -37,10 +37,8 @@ const Purchases = () => {
                     onClick={() => navigate(`/products/${purchaseCart.id}`)}
                   >
                     {/* <ListGroupItem>{purchaseCart.title}</ListGroupItem> */}
-                    <ListGroupItem variant="info">
-                      <Card.Title variant="dark">
-                        {purchaseCart.title}
-                      </Card.Title>
+                    <ListGroupItem variant="primary">
+                      <Card.Title>{purchaseCart.title}</Card.Title>
                       <DatePurchase purchase={purchase}></DatePurchase>
                     </ListGroupItem>
                     <ListGroupItem>Price {purchaseCart.price}</ListGroupItem>
