@@ -44,7 +44,13 @@ const Product = () => {
   return (
     <Row>
       <Col>
-        <Card>
+        <Card
+        // style={{
+        //   display: "flex",
+        //   justifyContent: "center",
+        //   alignItems: "center",
+        // }}
+        >
           <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
             <Card.Title variant="info">{productItem.title}</Card.Title>
             <Card.Img

@@ -80,15 +80,19 @@ const Home = () => {
         </Col>
       </Row>
 
-      <Row style={{ margin: "10px" }} xs={1} md={2} lg={4} className="g-4">
+      <Row xs={1} md={2} lg={4} className="g-4">
+        {/* <Row> */}
         {products.map((productItem) => (
           <Col key={productItem.id}>
             <Card
               style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
                 width: "auto",
-                height: "auto",
+                height: "300px",
                 maxHeight: "400px",
-                maxWidth: "200px",
+                maxWidth: "300px",
                 cursor: "pointer",
               }}
               onClick={() => navigate(`/products/${productItem.id}`)}
@@ -97,7 +101,7 @@ const Home = () => {
                 style={{
                   width: "auto",
                   height: "auto",
-                  maxHeight: "400px",
+                  maxHeight: "250px",
                   maxWidth: "200px",
                 }}
                 variant="top"
@@ -106,9 +110,13 @@ const Home = () => {
             </Card>
             <Card
               style={{
-                maxWidth: "200px",
-                Height: "500px",
+                width: "auto",
+                height: "300px",
+                maxHeight: "120px",
+                maxWidth: "300px",
                 cursor: "pointer",
+                textAlign: "Center",
+                padding: "10px",
               }}
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
