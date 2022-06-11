@@ -34,9 +34,16 @@ const NavBar = () => {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
+      <Navbar
+        style={{ borderRadius: "5px" }}
+        className="p-3"
+        collapseOnSelect
+        expand="lg"
+        bg="primary"
+        variant="dark"
+      >
         <Container>
-          <Navbar.Brand href="/">e-commerce</Navbar.Brand>
+          <Navbar.Brand href="/">E-commerce</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>

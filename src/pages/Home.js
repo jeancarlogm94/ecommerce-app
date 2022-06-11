@@ -35,7 +35,7 @@ const Home = () => {
       .then((res) => setCategories(res.data.data.categories));
   }, [dispatch]);
 
-  const filterNews = () => {
+  const filterProducts = () => {
     dispatch(filterHeadline(search));
   };
 
@@ -49,12 +49,11 @@ const Home = () => {
     <div>
       <Row>
         <Col>
-          <ListGroup style={{ cursor: "pointer" }}>
+          <ListGroup className="mt-3" style={{ cursor: "pointer" }}>
             {categories.map((category) => (
               <ListGroup.Item
                 key={category.id}
                 onClick={() => selectCategory(category.id)}
-                // variant="dark"
               >
                 {category.name}
               </ListGroup.Item>
@@ -65,15 +64,19 @@ const Home = () => {
 
       <Row>
         <Col>
-          <InputGroup className="mb-3">
+          <InputGroup styles={{ margin: "15px" }} className="my-3">
             <FormControl
-              placeholder="Search product"
+              placeholder="Search by Product"
               aria-label="Search product"
               aria-describedby="basic-addon2"
               onChange={(e) => setSearch(e.target.value)}
               value={search}
             />
-            <Button variant="info" id="button-addon2" onClick={filterNews}>
+            <Button
+              variant="primary"
+              id="button-addon2"
+              onClick={filterProducts}
+            >
               Button
             </Button>
           </InputGroup>
@@ -81,7 +84,6 @@ const Home = () => {
       </Row>
 
       <Row xs={1} md={2} lg={4} className="g-4">
-        {/* <Row> */}
         {products.map((productItem) => (
           <Col key={productItem.id}>
             <Card
@@ -91,7 +93,6 @@ const Home = () => {
                 alignItems: "center",
                 width: "auto",
                 height: "300px",
-                maxHeight: "400px",
                 maxWidth: "300px",
                 cursor: "pointer",
               }}
@@ -111,11 +112,9 @@ const Home = () => {
             <Card
               style={{
                 width: "auto",
-                height: "300px",
-                maxHeight: "120px",
+                height: "120px",
                 maxWidth: "300px",
                 cursor: "pointer",
-                textAlign: "Center",
                 padding: "10px",
               }}
               onClick={() => navigate(`/products/${productItem.id}`)}

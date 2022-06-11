@@ -37,12 +37,12 @@ const Login = () => {
           <h2 style={{ textAlign: "center" }}>Login</h2>
           <>
             {[
-              // "primary",
+              "primary",
               // "secondary",
               // "success",
               // "danger",
               // "warning",
-              "info",
+              // "info",
               // "light",
               // "dark",
             ].map((variant) => (
@@ -81,7 +81,7 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               {/* <Form.Check type="checkbox" label="Check me out" /> */}
             </Form.Group>
-            <Button variant="info" type="submit">
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>

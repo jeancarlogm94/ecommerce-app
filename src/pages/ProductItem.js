@@ -52,7 +52,7 @@ const Product = () => {
         // }}
         >
           <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
-            <Card.Title variant="info">{productItem.title}</Card.Title>
+            <Card.Title variant="primary">{productItem.title}</Card.Title>
             <Card.Img
               style={{ width: "200PX", maxHeight: "400px" }}
               variant="top"
@@ -81,7 +81,7 @@ const Product = () => {
             </button>
             <Button
               style={{ margin: "10px", width: "200px" }}
-              variant="info"
+              variant="primary"
               onClick={addCart}
             >
               Add to Cart
