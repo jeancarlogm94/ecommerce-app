@@ -53,7 +53,7 @@ const Product = () => {
           >
             <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
               <Card.Img
-                style={{ width: "300PX", maxHeight: "450px" }}
+                style={{ width: "250PX", maxHeight: "400px" }}
                 variant="top"
                 src={productDetail.productImgs}
               />
