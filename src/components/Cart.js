@@ -26,12 +26,12 @@ const Cart = ({ show, handleClose, handleShow }) => {
                 <h5>{cartProduct.title}</h5>
                 <Card.Text>Price {cartProduct.price}</Card.Text>
                 <Card.Text>
-                  Cantidad {cartProduct.productsInCart.quantity}
+                  Quantity {cartProduct.productsInCart.quantity}
                 </Card.Text>
               </ListGroup.Item>
             ))}
-            <Button variant="info" onClick={() => dispatch(buy())}>
-              Add Cart
+            <Button variant="primary" onClick={() => dispatch(buy())}>
+              CheckOut
             </Button>
           </ListGroup>
         </Offcanvas.Body>
