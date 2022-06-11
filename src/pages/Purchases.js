@@ -2,14 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPurchases } from "../store/slices/purchases.slices";
-import {
-  Card,
-  Col,
-  ListGroup,
-  ListGroupItem,
-  NavbarBrand,
-  Row,
-} from "react-bootstrap";
+import { Card, Col, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import DatePurchase from "../components/DatePurchase";
 
 const Purchases = () => {
