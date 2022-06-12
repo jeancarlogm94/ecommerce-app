@@ -43,7 +43,9 @@ const NavBar = () => {
         variant="dark"
       >
         <Container>
-          <Navbar.Brand href="/">E-commerce</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <i class="mx-2 fa-solid fa-dumpster"></i>e-commerce
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
