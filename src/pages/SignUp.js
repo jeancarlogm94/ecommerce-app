@@ -15,9 +15,10 @@ const SignUp = () => {
     dispatch(setIsloading(true));
     axios
       .post("https://ecommerce-api-react.herokuapp.com/api/v1/users", data)
-      .then(() => navigate("/login"))
-      .catch((error) => console.log(error.response))
-      .finally(() => dispatch(setIsloading(false)));
+      .then(() => navigate("/login"));
+    alert("Successful registration").finally(() =>
+      dispatch(setIsloading(false))
+    );
   };
 
   return (

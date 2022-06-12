@@ -113,7 +113,7 @@ const Home = () => {
             <Card
               style={{
                 width: "auto",
-                height: "120px",
+                height: "100px",
                 maxWidth: "300px",
                 cursor: "pointer",
                 padding: "10px",
