@@ -19,16 +19,18 @@ const UserInfo = () => {
           style={{ textAlign: "center", maxWidth: "400px" }}
           className="mx-auto mt-5"
         >
-          <Card.Title className="mb-3">User Info</Card.Title>
-          <Alert>
-            <Card.Title>
-              <i class="fa-solid fa-user"></i>{" "}
-              {localStorage.getItem("userName")}
-            </Card.Title>
-          </Alert>
-          <Button variant="primary" onClick={logOut}>
-            Log Out
-          </Button>
+          <Card.Body>
+            <Card.Title className="my-3">My Profile</Card.Title>
+            <Alert>
+              <Card.Title>
+                <i class="fa-solid fa-user"></i>{" "}
+                {localStorage.getItem("userName")}
+              </Card.Title>
+            </Alert>
+            <Button variant="primary" onClick={logOut}>
+              Log Out
+            </Button>
+          </Card.Body>
         </Card>
       </Col>
     </Row>
