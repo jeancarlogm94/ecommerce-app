@@ -15,9 +15,14 @@ const UserInfo = () => {
   return (
     <Row>
       <Col>
+        <i
+          onClick={() => navigate("/")}
+          style={{ color: "#4582ec", cursor: "pointer" }}
+          class="mx-4 my-3 fa-2x fa-solid fa-house"
+        ></i>
         <Card
           style={{ textAlign: "center", maxWidth: "400px" }}
-          className="mx-auto mt-5"
+          className="mx-auto"
         >
           <Card.Body>
             <Card.Title className="my-3">My Profile</Card.Title>

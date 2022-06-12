@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import { Form, Button, Card, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -22,82 +22,87 @@ const SignUp = () => {
   };
 
   return (
-    <Card
-      style={{ maxWidth: "400px", padding: "15px" }}
-      className="mx-auto mt-5"
-    >
-      <Card.Title className="my-3" style={{ textAlign: "center" }}>
-        Enter the data in the form to create your user
-      </Card.Title>
+    <Row>
+      <i
+        onClick={() => navigate("/")}
+        style={{ color: "#4582ec", cursor: "pointer" }}
+        class="mx-4 my-3 fa-2x fa-solid fa-house"
+      ></i>
 
-      <Form onSubmit={handleSubmit(submit)}>
-        <Form.Group className="mb-3">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            {...register("firstName")}
-            required
-            type="text"
-            placeholder="Enter first name"
-          />
-        </Form.Group>
+      <Card style={{ maxWidth: "400px", padding: "15px" }} className="mx-auto">
+        <Card.Title className="m-3" style={{ textAlign: "center" }}>
+          Enter the data in the form to create your user
+        </Card.Title>
 
-        <Form.Group className="mb-3" controlId="formGridAddress2">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            {...register("lastName")}
-            required
-            type="text"
-            placeholder="Enter last name"
-          />
-        </Form.Group>
+        <Form className="m-2" onSubmit={handleSubmit(submit)}>
+          <Form.Group className="mb-3">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control
+              {...register("firstName")}
+              required
+              type="text"
+              placeholder="Enter first name"
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            {...register("email")}
-            required
-            type="email"
-            placeholder="Enter email"
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control
+              {...register("lastName")}
+              required
+              type="text"
+              placeholder="Enter last name"
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            {...register("password")}
-            required
-            type="password"
-            placeholder="Enter password"
-          />
-        </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              {...register("email")}
+              required
+              type="email"
+              placeholder="Enter email"
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formGridAddress2">
-          <Form.Label>Phone (10 characters)</Form.Label>
-          <Form.Control
-            {...register("phone")}
-            type="tel"
-            required
-            minlength="10"
-            maxlength="10"
-            placeholder="Enter phone (10 characters)"
-          />
-        </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              {...register("password")}
+              required
+              type="password"
+              placeholder="Enter password"
+            />
+          </Form.Group>
 
-        <Button className="mt-2" variant="primary" type="submit">
-          Sign Up
-        </Button>
-        <div style={{ textAlign: "center" }} className="my-4">
-          Already have an account?
-          <Button
-            className="mx-2"
-            type="button"
-            onClick={() => navigate("/login")}
-          >
-            Log In
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+            <Form.Label>Phone (10 characters)</Form.Label>
+            <Form.Control
+              {...register("phone")}
+              type="tel"
+              required
+              minlength="10"
+              maxlength="10"
+              placeholder="Enter phone (10 characters)"
+            />
+          </Form.Group>
+
+          <Button className="mt-2" variant="primary" type="submit">
+            Sign Up
           </Button>
-        </div>
-      </Form>
-    </Card>
+          <div style={{ textAlign: "center" }} className="my-4">
+            Already have an account?
+            <Button
+              className="mx-2"
+              type="button"
+              onClick={() => navigate("/login")}
+            >
+              Log In
+            </Button>
+          </div>
+        </Form>
+      </Card>
+    </Row>
   );
 };
 

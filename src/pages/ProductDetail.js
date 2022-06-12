@@ -52,6 +52,11 @@ const ProductDetail = () => {
               padding: "4px",
             }}
           >
+            <i
+              onClick={() => navigate("/")}
+              style={{ color: "#4582ec", cursor: "pointer" }}
+              class="m-3 fa-2x fa-solid fa-house"
+            ></i>
             <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
               <Card.Img
                 style={{ width: "200PX", maxHeight: "450px" }}

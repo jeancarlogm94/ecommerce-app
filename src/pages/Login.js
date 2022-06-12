@@ -41,9 +41,14 @@ const Login = () => {
 
   return (
     <div>
-      <Card style={{ maxWidth: "400px" }} className="mx-auto mt-5">
+      <i
+        onClick={() => navigate("/")}
+        style={{ color: "#4582ec", cursor: "pointer" }}
+        class="mx-4 my-3 fa-2x fa-solid fa-house"
+      ></i>
+      <Card style={{ maxWidth: "400px" }} className="mx-auto ">
         <Card.Body>
-          <Card.Title className="m-3" style={{ textAlign: "center" }}>
+          <Card.Title className="my-3" style={{ textAlign: "center" }}>
             Welcome! Enter your email and password to continue
           </Card.Title>
           <>
