@@ -12,10 +12,11 @@ const SignUp = () => {
   const dispatch = useDispatch();
 
   const submit = (data) => {
-    dispatch(setIsloading());
+    dispatch(setIsloading(true));
     axios
       .post("https://ecommerce-api-react.herokuapp.com/api/v1/users", data)
-      //   .then(() => )
+      .then(() => navigate("/login"))
+      .catch((error) => console.log(error.response))
       .finally(() => dispatch(setIsloading(false)));
   };
 
@@ -29,6 +30,26 @@ const SignUp = () => {
       </Card.Title>
 
       <Form onSubmit={handleSubmit(submit)}>
+        <Form.Group className="mb-3">
+          <Form.Label>First Name</Form.Label>
+          <Form.Control
+            {...register("firstName")}
+            required
+            type="text"
+            placeholder="Enter first name"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            {...register("lastName")}
+            required
+            type="text"
+            placeholder="Enter last name"
+          />
+        </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -49,34 +70,14 @@ const SignUp = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            {...register("firstName")}
-            required
-            type="text"
-            placeholder="Enter first name"
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formGridAddress2">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            {...register("lasttName")}
-            required
-            type="text"
-            placeholder="Enter last name"
-          />
-        </Form.Group>
-
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <Form.Label>Phone (10 characters)</Form.Label>
           <Form.Control
             {...register("phone")}
-            type="number"
+            type="tel"
             required
-            min="10"
-            max="10"
+            minlength="10"
+            maxlength="10"
             placeholder="Enter phone (10 characters)"
           />
         </Form.Group>

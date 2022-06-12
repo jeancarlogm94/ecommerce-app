@@ -13,7 +13,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const login = (data) => {
-    dispatch(setIsloading());
+    dispatch(setIsloading(true));
     axios
       .post(
         "https://ecommerce-api-react.herokuapp.com/api/v1/users/login",
@@ -63,7 +63,7 @@ const Login = () => {
           </>
 
           <Form onSubmit={handleSubmit(login)}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 {...register("email")}
@@ -72,7 +72,7 @@ const Login = () => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 {...register("password")}
@@ -80,13 +80,17 @@ const Login = () => {
                 placeholder="Password"
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Group className="mb-3">
               {/* <Form.Check type="checkbox" label="Check me out" /> */}
             </Form.Group>
             <Button type="submit">Login</Button>
             <div style={{ textAlign: "center" }} className="my-4">
               Don't have an account?{" "}
-              <Button type="button" onClick={() => navigate("/signup")}>
+              <Button
+                className="mx-2"
+                type="button"
+                onClick={() => navigate("/signup")}
+              >
                 Sign up
               </Button>
             </div>
