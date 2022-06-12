@@ -26,20 +26,18 @@ export const getCart = () => (dispatch) => {
 
 export const addToCart = (cart) => (dispatch) => {
   dispatch(setIsloading(true));
-  return (
-    axios
-      .post(
-        "https://ecommerce-api-react.herokuapp.com/api/v1/cart",
-        cart,
-        getConfig()
-      )
-      // .catch((error) => console.log(error.response))
-      .then(() => dispatch(getCart()))
-      .finally(() => dispatch(setIsloading(false)))
-  );
+  return axios
+    .post(
+      "https://ecommerce-api-react.herokuapp.com/api/v1/cart",
+      cart,
+      getConfig()
+    )
+    .catch((error) => console.log(error.response))
+    .then(() => dispatch(getCart()))
+    .finally(() => dispatch(setIsloading(false)));
 };
 
-export const buy = () => (dispatch) => {
+export const checkOut = () => (dispatch) => {
   dispatch(setIsloading(true));
   return axios
     .post(
@@ -51,6 +49,18 @@ export const buy = () => (dispatch) => {
       dispatch(getPurchases());
       dispatch(setCart([]));
     })
+    .finally(() => dispatch(setIsloading(false)));
+};
+
+export const removeProduct = (cartProductId) => (dispatch) => {
+  dispatch(setIsloading(true));
+  return axios
+    .delete(
+      `https://ecommerce-api-react.herokuapp.com/api/v1/cart/${cartProductId}`,
+      getConfig()
+    )
+    .catch((error) => console.log(error.response))
+    .then(() => dispatch(getCart()))
     .finally(() => dispatch(setIsloading(false)));
 };
 

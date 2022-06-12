@@ -8,6 +8,7 @@ import {
   getProducts,
 } from "../store/slices/products.slices";
 import {
+  Alert,
   Button,
   Card,
   Col,
@@ -27,6 +28,7 @@ const Home = () => {
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
+    // window.scrollTo(0, 0);
     dispatch(getProducts());
     axios
       .get(
@@ -109,19 +111,23 @@ const Home = () => {
                 src={productItem.productImgs}
               />
             </Card>
-            <Card
+
+            <Alert
               style={{
                 width: "auto",
-                height: "120px",
+                height: "100px",
                 maxWidth: "300px",
                 cursor: "pointer",
                 padding: "10px",
               }}
-              onClick={() => navigate(`/products/${productItem.id}`)}
             >
               <Card.Title>{productItem.title}</Card.Title>
               <Card.Text>Price {productItem.price}</Card.Text>
-            </Card>
+              {/* <i
+                className="fa-solid fa-cart-shopping"
+                // onClick={addCart}
+              ></i> */}
+            </Alert>
           </Col>
         ))}
       </Row>

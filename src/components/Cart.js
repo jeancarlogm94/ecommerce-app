@@ -1,39 +1,75 @@
 import React from "react";
-import { Button, Card, ListGroup, Offcanvas } from "react-bootstrap";
+import { Alert, Button, Card, ListGroup, Offcanvas } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { buy } from "../store/slices/cart.slice";
+import { checkOut, removeProduct } from "../store/slices/cart.slice";
 
-const Cart = ({ show, handleClose, handleShow }) => {
+const Cart = ({ show, handleClose }) => {
   const cartProducts = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // const removeCart = () => {
+  //   const cartProductId = cartProduct.id;
+  //   dispatch(checkOut(cartProductId));
+  // };
+
   return (
     <div>
-      <Offcanvas show={show} onHide={handleClose} placement="end">
+      <Offcanvas show={show} placement="end" onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Cart</Offcanvas.Title>
+          <Alert className="mx-auto px-5">
+            <Card.Title>Shopping Cart</Card.Title>
+          </Alert>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ListGroup>
             {cartProducts.map((cartProduct) => (
               <ListGroup.Item
-                style={{ cursor: "pointer" }}
+                className="py-4"
                 key={cartProduct.id}
-                onClick={() => navigate(`/products/${cartProduct.id}`)}
+                // style={{ cursor: "pointer" }}
+                // onClick={() => navigate(`/products/${cartProduct.id}`)}
+                // onHide={handleClose}
               >
-                <h5>{cartProduct.title}</h5>
-                <Card.Text>Price {cartProduct.price}</Card.Text>
+                <Alert>
+                  <Card.Title>{cartProduct.title}</Card.Title>
+                </Alert>
+
+                <Card.Text>
+                  Total price $
+                  {cartProduct.price * cartProduct.productsInCart.quantity}
+                </Card.Text>
                 <Card.Text>
                   Quantity {cartProduct.productsInCart.quantity}
                 </Card.Text>
+                {/* <Button
+                  variant="primary"
+                  onClick={() => dispatch(removeProduct(cartProduct.id))}
+                >
+                  Remove
+                </Button> */}
+                <i
+                  class="fa-solid fa-trash"
+                  style={{
+                    color: "#4582ec",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => dispatch(removeProduct(cartProduct.id))}
+                ></i>
               </ListGroup.Item>
             ))}
-            <Button variant="primary" onClick={() => dispatch(buy())}>
+          </ListGroup>
+          <Card>
+            <Card.Text className="m-3">Total $ </Card.Text>
+            <Button
+              className="m-3"
+              variant="primary"
+              onClick={() => dispatch(checkOut())}
+            >
               CheckOut
             </Button>
-          </ListGroup>
+          </Card>
         </Offcanvas.Body>
       </Offcanvas>
     </div>

@@ -27,14 +27,16 @@ const Login = () => {
           alert("Wrong credentials");
         }
       });
-    console.log(data);
+    // console.log(data);
   };
 
   return (
     <div>
-      <Card style={{ maxWidth: "500px" }} className="mx-auto">
+      <Card style={{ maxWidth: "400px" }} className="mx-auto mt-5">
         <Card.Body>
-          <h2 style={{ textAlign: "center" }}>Login</h2>
+          <Card.Title className="m-3" style={{ textAlign: "center" }}>
+            Welcome! Enter your email and password to continue
+          </Card.Title>
           <>
             {[
               "primary",
@@ -46,23 +48,23 @@ const Login = () => {
               // "light",
               // "dark",
             ].map((variant) => (
-              <Alert
-                style={{ textAlign: "center" }}
-                key={variant}
-                variant={variant}
-              >
+              <Alert key={variant} variant={variant}>
                 <Alert.Heading style={{ textAlign: "center" }}>
                   Test data
                 </Alert.Heading>
-                <h6> Email: mason@gmail.com</h6>
-                <h6>Password: mason1234</h6>
+                <h6>
+                  <i className="m-2 fa-solid fa-envelope"> </i>mason@gmail.com
+                </h6>
+                <h6>
+                  <i className="m-2 fa-solid fa-lock"></i>mason1234
+                </h6>
               </Alert>
             ))}
           </>
 
           <Form onSubmit={handleSubmit(submit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 {...register("email")}
                 type="email"
