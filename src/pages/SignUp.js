@@ -27,7 +27,7 @@ const SignUp = () => {
       className="mx-auto mt-5"
     >
       <Card.Title className="my-3" style={{ textAlign: "center" }}>
-        Sign Up
+        Enter the data in the form to create your user
       </Card.Title>
 
       <Form onSubmit={handleSubmit(submit)}>

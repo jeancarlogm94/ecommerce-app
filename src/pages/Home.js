@@ -121,7 +121,7 @@ const Home = () => {
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
               <Card.Title>{productItem.title}</Card.Title>
-              <Card.Text>Price {productItem.price}</Card.Text>
+              <Card.Text>Price ${productItem.price}</Card.Text>
             </Card>
           </Col>
         ))}

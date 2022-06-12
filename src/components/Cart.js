@@ -77,7 +77,9 @@ const Cart = ({ show, handleClose }) => {
             ))}
           </ListGroup>
           <Card>
-            <Card.Text className="m-3">Total ${total} </Card.Text>
+            <Card.Text className="m-3">
+              <b>Total ${total}</b>
+            </Card.Text>
             <Button
               className="my-4 mx-5"
               variant="primary"

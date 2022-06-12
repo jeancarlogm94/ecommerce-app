@@ -71,14 +71,19 @@ const ProductDetail = () => {
             }}
           >
             <Alert>
-              {" "}
               <Card.Title className="my-2" variant="primary">
                 {productDetail.title}
               </Card.Title>
             </Alert>
-            <Card.Text>{productDetail.description}</Card.Text>
-            <Card.Text>Price ${productDetail.price}</Card.Text>
-            <Card.Text>Quantity</Card.Text>
+            <Card.Text style={{ fontSize: "12pt" }}>
+              {productDetail.description}
+            </Card.Text>
+            <Card.Text>
+              <b>Price ${productDetail.price}</b>
+            </Card.Text>
+            <Card.Text>
+              <b>Quantity</b>
+            </Card.Text>
             <div>
               <Button
                 style={{ width: "50px" }}
@@ -130,6 +135,7 @@ const ProductDetail = () => {
           </Card>
         </Col>
       </Row>
+
       <Card.Title className="my-2">Similar Products ...</Card.Title>
       <Row xs={1} sm={2} md={3} lg={4} className="g-4">
         {productsList.map((productList) => (
@@ -170,7 +176,7 @@ const ProductDetail = () => {
               onClick={() => navigate(`/products/${productList.id}`)}
             >
               <Card.Title>{productList.title}</Card.Title>
-              <Card.Text>Price {productList.price}</Card.Text>
+              <Card.Text>Price ${productList.price}</Card.Text>
             </Card>
           </Col>
         ))}
