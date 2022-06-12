@@ -32,9 +32,9 @@ const Cart = ({ show, handleClose }) => {
                 // onClick={() => navigate(`/products/${cartProduct.id}`)}
                 // onHide={handleClose}
               >
-                <Alert>
+                <Card.Title>
                   <Card.Title>{cartProduct.title}</Card.Title>
-                </Alert>
+                </Card.Title>
 
                 <Card.Text>
                   Total price $
@@ -63,7 +63,7 @@ const Cart = ({ show, handleClose }) => {
           <Card>
             <Card.Text className="m-3">Total $ </Card.Text>
             <Button
-              className="m-3"
+              className="my-4 mx-5"
               variant="primary"
               onClick={() => dispatch(checkOut())}
             >
