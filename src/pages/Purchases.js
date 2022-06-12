@@ -32,11 +32,12 @@ const Purchases = () => {
             style={{ textAlign: "center", maxWidth: "400px" }}
             className="mt-5 mx-auto"
           >
-            <Card.Title className="mb-3">My Purchases</Card.Title>
+            <Card.Title className="mb-2">My Purchases</Card.Title>
             {purchases.map((purchase) => (
               <ListGroup key={purchase.id} style={{ cursor: "pointer" }}>
                 {purchase.cart.products.map((purchaseCart) => (
-                  <ListGroupItem
+                  <Card
+                    className="m-3"
                     key={purchaseCart.id}
                     onClick={() => navigate(`/products/${purchaseCart.id}`)}
                   >
@@ -51,7 +52,7 @@ const Purchases = () => {
                     <ListGroupItem>
                       Quantity {purchaseCart.productsInCart.quantity}
                     </ListGroupItem>
-                  </ListGroupItem>
+                  </Card>
                 ))}
               </ListGroup>
             ))}
