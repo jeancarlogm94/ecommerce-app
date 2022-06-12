@@ -48,7 +48,7 @@ const NavBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Nav.Link href="/#/user">Login</Nav.Link>
+              <Nav.Link href="/#/user">User</Nav.Link>
               <Nav.Link href="/#/purchases">Purchases</Nav.Link>
               <Nav.Link onClick={handleShow} role="button">
                 Cart
