@@ -3,3 +3,4 @@ export { default as Login } from "./Login";
 export { default as ProductDetail } from "./ProductDetail";
 export { default as Purchases } from "./Purchases";
 export { default as UserInfo } from "./UserInfo";
+export { default as SignUp } from "./SignUp";

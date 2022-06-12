@@ -2,14 +2,18 @@ import axios from "axios";
 import React from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setIsloading } from "../store/slices/isLoading.Slice";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const submit = (data) => {
+  const login = (data) => {
+    dispatch(setIsloading());
     axios
       .post(
         "https://ecommerce-api-react.herokuapp.com/api/v1/users/login",
@@ -30,7 +34,8 @@ const Login = () => {
         if (error.response.status === 404) {
           alert("Invalid credentials");
         }
-      });
+      })
+      .finally(() => dispatch(setIsloading(false)));
     // console.log(data);
   };
 
@@ -42,16 +47,7 @@ const Login = () => {
             Welcome! Enter your email and password to continue
           </Card.Title>
           <>
-            {[
-              "primary",
-              // "secondary",
-              // "success",
-              // "danger",
-              // "warning",
-              // "info",
-              // "light",
-              // "dark",
-            ].map((variant) => (
+            {["primary"].map((variant = "primary") => (
               <Alert key={variant} variant={variant}>
                 <Alert.Heading style={{ textAlign: "center" }}>
                   Test data
@@ -66,7 +62,7 @@ const Login = () => {
             ))}
           </>
 
-          <Form onSubmit={handleSubmit(submit)}>
+          <Form onSubmit={handleSubmit(login)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -87,9 +83,13 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               {/* <Form.Check type="checkbox" label="Check me out" /> */}
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <Button type="submit">Login</Button>
+            <div style={{ textAlign: "center" }} className="my-4">
+              Don't have an account?{" "}
+              <Button type="button" onClick={() => navigate("/signup")}>
+                Sign up
+              </Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>
