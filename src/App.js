@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootswatch/dist/flatly/bootstrap.min.css";
-import { Home, ProductItem, Login, Purchases } from "./pages/Index";
+import { Home, ProductDetail, Login, Purchases } from "./pages/Index";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { LoadingScreen, NavBar, ProtectedRoutes } from "./components/Index";
@@ -16,7 +16,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products/:id" element={<ProductItem />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/login" element={<Login />} />
 
           <Route element={<ProtectedRoutes />}>

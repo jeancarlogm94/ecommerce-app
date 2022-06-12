@@ -99,10 +99,11 @@ const Home = () => {
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
               <Card.Img
+                className="mx-auto"
                 style={{
                   width: "auto",
                   height: "auto",
-                  maxHeight: "250px",
+                  maxHeight: "200px",
                   maxWidth: "200px",
                 }}
                 src={productItem.productImgs}

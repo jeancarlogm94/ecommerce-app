@@ -6,7 +6,7 @@ import { filterCategory } from "../store/slices/products.slices";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { addToCart } from "../store/slices/cart.slice";
 
-const Product = () => {
+const ProductDetail = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -75,14 +75,7 @@ const Product = () => {
             <Card.Text>{productDetail.description}</Card.Text>
             <Card.Text>Price ${productDetail.price}</Card.Text>
             <Card.Text>Quantity</Card.Text>
-            <div
-            // style={{
-            //   display: "inlineBlock",
-            //   justifyContent: "center",
-            //   alignItems: "center",
-            // }}
-            >
-              {" "}
+            <div>
               <Button
                 style={{ width: "50px" }}
                 onClick={() => setQuantity((decrement) => decrement - 1)}
@@ -93,9 +86,10 @@ const Product = () => {
               <input
                 style={{
                   margin: "10px",
+                  border: "1px solid #4582ec",
                   borderRadius: "5px",
-                  borderColor: "#4582ec",
-                  width: "40px",
+                  width: "50px",
+                  height: "40px",
                   textAlign: "right",
                 }}
                 type="number"
@@ -125,6 +119,7 @@ const Product = () => {
         {productsList.map((productList) => (
           <Col key={productList.id}>
             <Card
+              className="mx-auto"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -140,7 +135,7 @@ const Product = () => {
                 style={{
                   width: "auto",
                   height: "auto",
-                  maxHeight: "250px",
+                  maxHeight: "200px",
                   maxWidth: "200px",
                 }}
                 variant="top"
@@ -168,4 +163,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductDetail;
