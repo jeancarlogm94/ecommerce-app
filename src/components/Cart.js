@@ -1,12 +1,12 @@
 import React from "react";
 import { Alert, Button, Card, ListGroup, Offcanvas } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { checkOut, removeProduct } from "../store/slices/cart.slice";
 
 const Cart = ({ show, handleClose }) => {
   const cartProducts = useSelector((state) => state.cart);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // const removeCart = () => {

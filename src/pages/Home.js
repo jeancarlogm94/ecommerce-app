@@ -8,7 +8,6 @@ import {
   getProducts,
 } from "../store/slices/products.slices";
 import {
-  Alert,
   Button,
   Card,
   Col,
@@ -111,23 +110,19 @@ const Home = () => {
                 src={productItem.productImgs}
               />
             </Card>
-
-            <Alert
+            <Card
               style={{
                 width: "auto",
-                height: "100px",
+                height: "120px",
                 maxWidth: "300px",
                 cursor: "pointer",
                 padding: "10px",
               }}
+              onClick={() => navigate(`/products/${productItem.id}`)}
             >
               <Card.Title>{productItem.title}</Card.Title>
               <Card.Text>Price {productItem.price}</Card.Text>
-              {/* <i
-                className="fa-solid fa-cart-shopping"
-                // onClick={addCart}
-              ></i> */}
-            </Alert>
+            </Card>
           </Col>
         ))}
       </Row>

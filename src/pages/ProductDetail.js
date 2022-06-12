@@ -76,7 +76,6 @@ const ProductDetail = () => {
                 {productDetail.title}
               </Card.Title>
             </Alert>
-
             <Card.Text>{productDetail.description}</Card.Text>
             <Card.Text>Price ${productDetail.price}</Card.Text>
             <Card.Text>Quantity</Card.Text>
