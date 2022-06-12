@@ -54,7 +54,7 @@ const ProductDetail = () => {
           >
             <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
               <Card.Img
-                style={{ width: "250PX", maxHeight: "500px" }}
+                style={{ width: "200PX", maxHeight: "450px" }}
                 variant="top"
                 src={productDetail.productImgs}
               />
@@ -112,13 +112,6 @@ const ProductDetail = () => {
               >
                 +
               </Button>
-              {/* <Button
-                style={{ margin: "10px" }}
-                variant="primary"
-                onClick={addCart}
-              >
-                Add Cart
-              </Button> */}
               <i
                 style={{
                   margin: "10px",
