@@ -6,10 +6,10 @@ import { getCart } from "../store/slices/cart.slice";
 import Cart from "./Cart";
 
 const NavBar = () => {
-  const logOut = () => {
-    localStorage.setItem("token", "");
-    alert("Closed session");
-  };
+  // const logOut = () => {
+  //   localStorage.setItem("token", "");
+  //   alert("Closed session");
+  // };
 
   const navigate = useNavigate();
 
@@ -48,14 +48,14 @@ const NavBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Nav.Link href="/#/login">Login</Nav.Link>
+              <Nav.Link href="/#/user">Login</Nav.Link>
               <Nav.Link href="/#/purchases">Purchases</Nav.Link>
               <Nav.Link onClick={handleShow} role="button">
                 Cart
               </Nav.Link>
-              <Nav.Link href="/#/login" onClick={logOut}>
+              {/* <Nav.Link href="/#/login" onClick={logOut}>
                 Log Out
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

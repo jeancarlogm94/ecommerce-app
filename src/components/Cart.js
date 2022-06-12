@@ -1,7 +1,6 @@
 import React from "react";
 import { Alert, Button, Card, ListGroup, Offcanvas } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
 import { checkOut, removeProduct } from "../store/slices/cart.slice";
 
 const Cart = ({ show, handleClose }) => {
@@ -9,17 +8,34 @@ const Cart = ({ show, handleClose }) => {
   // const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // const removeCart = () => {
-  //   const cartProductId = cartProduct.id;
-  //   dispatch(checkOut(cartProductId));
-  // };
+  // console.log(cartProducts);
+
+  let total = 0;
+
+  if (cartProducts?.length > 0) {
+    if (cartProducts?.length > 1) {
+      total = cartProducts?.reduce((initial, current) => {
+        if (typeof initial === "number") {
+          return initial + current.price * current.productsInCart?.quantity;
+        } else {
+          return (
+            initial.price * initial.productsInCart?.quantity +
+            current.price * current.productsInCart?.quantity
+          );
+        }
+      });
+    } else {
+      total =
+        cartProducts?.[0].price * cartProducts?.[0].productsInCart?.quantity;
+    }
+  }
 
   return (
     <div>
       <Offcanvas show={show} placement="end" onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Alert className="mx-auto px-5">
-            <Card.Title>Shopping Cart</Card.Title>
+            <Card.Title>Purchases in my Cart</Card.Title>
           </Alert>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -50,7 +66,7 @@ const Cart = ({ show, handleClose }) => {
                   Remove
                 </Button> */}
                 <i
-                  class="fa-solid fa-trash"
+                  className="fa-solid fa-trash"
                   style={{
                     color: "#4582ec",
                     cursor: "pointer",
@@ -61,7 +77,7 @@ const Cart = ({ show, handleClose }) => {
             ))}
           </ListGroup>
           <Card>
-            <Card.Text className="m-3">Total $ </Card.Text>
+            <Card.Text className="m-3">Total ${total} </Card.Text>
             <Button
               className="my-4 mx-5"
               variant="primary"

@@ -18,13 +18,17 @@ const Login = () => {
       .then((res) => {
         // console.log(res.data.data.token);
         localStorage.setItem("token", res.data.data.token);
-        navigate("/");
+        localStorage.setItem(
+          "userName",
+          res.data.data.user.firstName + " " + res.data.data.user.lastName
+        );
+        navigate("/user");
         alert("Logged in");
       })
       .catch((error) => {
         // console.log(error.response);
         if (error.response.status === 404) {
-          alert("Wrong credentials");
+          alert("Invalid credentials");
         }
       });
     // console.log(data);
