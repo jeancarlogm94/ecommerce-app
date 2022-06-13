@@ -169,7 +169,6 @@ const ProductDetail = () => {
         {productsList.map((productList) => (
           <Col key={productList.id}>
             <Card
-              className="mx-auto"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -182,6 +181,8 @@ const ProductDetail = () => {
               onClick={() => navigate(`/products/${productList.id}`)}
             >
               <Card.Img
+                id="product-1"
+                className="mx-auto"
                 style={{
                   width: "auto",
                   height: "auto",
@@ -193,7 +194,7 @@ const ProductDetail = () => {
               />
             </Card>
             <Card
-              className="mb-5"
+              className="my-2"
               style={{
                 width: "auto",
                 height: "100px",

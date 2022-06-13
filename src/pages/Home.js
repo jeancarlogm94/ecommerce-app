@@ -111,20 +111,10 @@ const Home = () => {
                 }}
                 src={productItem.productImgs?.[0]}
               />
-              {/* <Card.Img
-                id="product-2"
-                className="mx-auto"
-                style={{
-                  width: "auto",
-                  height: "auto",
-                  maxHeight: "200px",
-                  maxWidth: "200px",
-                }}
-                src={productItem.productImgs?.[2]}
-              /> */}
             </Card>
 
             <Card
+              className="my-2"
               style={{
                 width: "auto",
                 height: "100px",
