@@ -52,28 +52,43 @@ const ProductDetail = () => {
               className="m-3 mb- fa-2x fa-solid fa-house"
             ></i>
             <Card.Body className="mx-auto">
-              {/* <Card.Img
-                style={{ width: "200PX", maxHeight: "450px" }}
-                variant="top"
-                src={productDetail.productImgs}
-              /> */}
-
               <Carousel variant="dark">
                 <Carousel.Item>
                   <Card.Img
-                    style={{ padding: "50px", width: "auto", height: "350px" }}
+                    className="mx-auto"
+                    style={{
+                      padding: "50px",
+                      width: "auto",
+                      height: "auto",
+                      maxHeight: "350px",
+                      maxWidth: "350px",
+                    }}
                     src={productDetail.productImgs?.[0]}
                   />
                 </Carousel.Item>
                 <Carousel.Item>
                   <Card.Img
-                    style={{ padding: "50px", width: "auto", height: "350px" }}
+                    className="mx-auto"
+                    style={{
+                      padding: "50px",
+                      width: "auto",
+                      height: "auto",
+                      maxHeight: "350px",
+                      maxWidth: "350px",
+                    }}
                     src={productDetail.productImgs?.[1]}
                   />
                 </Carousel.Item>
                 <Carousel.Item>
                   <Card.Img
-                    style={{ padding: "50px", width: "auto", height: "350px" }}
+                    className="mx-auto"
+                    style={{
+                      padding: "50px",
+                      width: "auto",
+                      height: "auto",
+                      maxHeight: "350px",
+                      maxWidth: "350px",
+                    }}
                     src={productDetail.productImgs?.[2]}
                   />
                 </Carousel.Item>
