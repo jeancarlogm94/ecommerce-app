@@ -69,18 +69,29 @@ const Home = () => {
           <InputGroup styles={{ margin: "15px" }} className="my-3">
             <FormControl
               placeholder="Search by Product"
-              aria-label="Search product"
-              aria-describedby="basic-addon2"
               onChange={(e) => setSearch(e.target.value)}
               value={search}
+              style={{ borderRadius: "10px" }}
             />
-            <Button
+
+            <i
+              style={{
+                cursor: "pointer",
+                backgroundColor: "#4582ec",
+                padding: "14px",
+                borderRadius: "50%",
+                color: "white",
+              }}
+              class="mx-2 fa-solid fa-1x fa-magnifying-glass"
+              onClick={filterProducts}
+            ></i>
+            {/* <Button
               variant="primary"
               id="button-addon2"
               onClick={filterProducts}
             >
               Button
-            </Button>
+            </Button> */}
           </InputGroup>
         </Col>
       </Row>
