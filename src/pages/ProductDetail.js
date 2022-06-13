@@ -60,8 +60,8 @@ const ProductDetail = () => {
                       padding: "50px",
                       width: "auto",
                       height: "auto",
-                      maxHeight: "350px",
-                      maxWidth: "350px",
+                      maxHeight: "330px",
+                      maxWidth: "330px",
                     }}
                     src={productDetail.productImgs?.[0]}
                   />
@@ -73,8 +73,8 @@ const ProductDetail = () => {
                       padding: "50px",
                       width: "auto",
                       height: "auto",
-                      maxHeight: "350px",
-                      maxWidth: "350px",
+                      maxHeight: "330px",
+                      maxWidth: "330px",
                     }}
                     src={productDetail.productImgs?.[1]}
                   />
@@ -86,8 +86,8 @@ const ProductDetail = () => {
                       padding: "50px",
                       width: "auto",
                       height: "auto",
-                      maxHeight: "350px",
-                      maxWidth: "350px",
+                      maxHeight: "330px",
+                      maxWidth: "330px",
                     }}
                     src={productDetail.productImgs?.[2]}
                   />
