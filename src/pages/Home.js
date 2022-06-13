@@ -84,13 +84,6 @@ const Home = () => {
               class="mx-2 fa-solid fa-1x fa-magnifying-glass"
               onClick={filterProducts}
             ></i>
-            {/* <Button
-              variant="primary"
-              id="button-addon2"
-              onClick={filterProducts}
-            >
-              Button
-            </Button> */}
           </InputGroup>
         </Col>
       </Row>
