@@ -44,7 +44,7 @@ const NavBar = () => {
       >
         <Container>
           <Navbar.Brand href="/">
-            <i class="mx-2 fa-solid fa-dumpster"></i>e-commerce
+            <i className="mx-2 fa-solid fa-dumpster"></i>e-commerce
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

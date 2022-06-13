@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { filterCategory } from "../store/slices/products.slices";
-import { Alert, Button, Card, Col, Row } from "react-bootstrap";
+import { Alert, Button, Card, Carousel, Col, Row } from "react-bootstrap";
 import { addToCart } from "../store/slices/cart.slice";
 
 const ProductDetail = () => {
@@ -45,24 +45,39 @@ const ProductDetail = () => {
     <div>
       <Row>
         <Col>
-          <Card
-            className="my-4"
-            style={{
-              margin: "15px",
-              padding: "4px",
-            }}
-          >
+          <Card className="my-4">
             <i
               onClick={() => navigate("/")}
               style={{ color: "#4582ec", cursor: "pointer" }}
-              class="m-3 fa-2x fa-solid fa-house"
+              className="m-3 mb- fa-2x fa-solid fa-house"
             ></i>
-            <Card.Body style={{ maxWidth: "500px" }} className="mx-auto">
-              <Card.Img
+            <Card.Body className="mx-auto">
+              {/* <Card.Img
                 style={{ width: "200PX", maxHeight: "450px" }}
                 variant="top"
                 src={productDetail.productImgs}
-              />
+              /> */}
+
+              <Carousel variant="dark">
+                <Carousel.Item>
+                  <Card.Img
+                    style={{ padding: "50px", width: "auto", height: "350px" }}
+                    src={productDetail.productImgs?.[0]}
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <Card.Img
+                    style={{ padding: "50px", width: "auto", height: "350px" }}
+                    src={productDetail.productImgs?.[1]}
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <Card.Img
+                    style={{ padding: "50px", width: "auto", height: "350px" }}
+                    src={productDetail.productImgs?.[2]}
+                  />
+                </Carousel.Item>
+              </Carousel>
             </Card.Body>
           </Card>
         </Col>
