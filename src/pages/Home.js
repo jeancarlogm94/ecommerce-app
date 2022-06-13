@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../styles/home.css";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -100,6 +101,7 @@ const Home = () => {
               onClick={() => navigate(`/products/${productItem.id}`)}
             >
               <Card.Img
+                id="product-1"
                 className="mx-auto"
                 style={{
                   width: "auto",
@@ -107,9 +109,21 @@ const Home = () => {
                   maxHeight: "200px",
                   maxWidth: "200px",
                 }}
-                src={productItem.productImgs}
+                src={productItem.productImgs?.[0]}
               />
+              {/* <Card.Img
+                id="product-2"
+                className="mx-auto"
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  maxHeight: "200px",
+                  maxWidth: "200px",
+                }}
+                src={productItem.productImgs?.[2]}
+              /> */}
             </Card>
+
             <Card
               style={{
                 width: "auto",
