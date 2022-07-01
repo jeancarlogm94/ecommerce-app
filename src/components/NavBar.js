@@ -44,7 +44,7 @@ const NavBar = () => {
       >
         <Container>
           <Navbar.Brand href="/">
-            <i className="mx-2 fa-2xl fa-solid fa-dumpster "></i>{' '}
+            <i className="fa-xl fa-solid fa-dumpster "></i>{' '}
             <span style={{ fontSize: '30px' }}>e-commerce</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
