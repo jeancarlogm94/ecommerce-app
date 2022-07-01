@@ -71,10 +71,10 @@ const Login = () => {
                 </Alert.Heading>
                 <h6>
                   <i className="m-2 fa-solid fa-envelope"> </i>
-                  testuser@gmail.com
+                  usertest@usertest.com
                 </h6>
                 <h6>
-                  <i className="m-2 fa-solid fa-lock"></i>1234567890
+                  <i className="m-2 fa-solid fa-lock"></i>pass1234
                 </h6>
               </Alert>
             ))}
