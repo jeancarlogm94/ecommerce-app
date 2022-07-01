@@ -36,7 +36,7 @@ const NavBar = () => {
     <div>
       <Navbar
         style={{ fontSize: '20px' }}
-        className="rounded p-4"
+        className="rounded p-3"
         collapseOnSelect
         expand="lg"
         bg="primary"
@@ -45,7 +45,7 @@ const NavBar = () => {
         <Container>
           <Navbar.Brand href="/">
             <i className="fa-xl fa-solid fa-dumpster "></i>{' '}
-            <span style={{ fontSize: '30px' }}>e-commerce</span>
+            <span style={{ fontSize: '25px' }}>e-commerce</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
