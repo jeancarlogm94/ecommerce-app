@@ -1,7 +1,7 @@
-import React from "react";
-import { Alert, Button, Card, ListGroup, Offcanvas } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { checkOut, removeProduct } from "../store/slices/cart.slice";
+import React from 'react';
+import { Alert, Button, Card, ListGroup, Offcanvas } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { checkOut, removeProduct } from '../store/slices/cart.slice';
 
 const Cart = ({ show, handleClose }) => {
   const cartProducts = useSelector((state) => state.cart);
@@ -15,7 +15,7 @@ const Cart = ({ show, handleClose }) => {
   if (cartProducts?.length > 0) {
     if (cartProducts?.length > 1) {
       total = cartProducts?.reduce((initial, current) => {
-        if (typeof initial === "number") {
+        if (typeof initial === 'number') {
           return initial + current.price * current.productsInCart?.quantity;
         } else {
           return (
@@ -68,8 +68,8 @@ const Cart = ({ show, handleClose }) => {
                 <i
                   className="fa-solid fa-trash"
                   style={{
-                    color: "#4582ec",
-                    cursor: "pointer",
+                    color: '#4582ec',
+                    cursor: 'pointer',
                   }}
                   onClick={() => dispatch(removeProduct(cartProduct.id))}
                 ></i>

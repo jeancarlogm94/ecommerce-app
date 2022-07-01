@@ -1,5 +1,5 @@
-import "./App.css";
-import "bootswatch/dist/flatly/bootstrap.min.css";
+import './App.css';
+import 'bootswatch/dist/flatly/bootstrap.min.css';
 import {
   Home,
   ProductDetail,
@@ -7,19 +7,19 @@ import {
   Purchases,
   UserInfo,
   SignUp,
-} from "./pages/Index";
-import { HashRouter, Route, Routes } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import { LoadingScreen, NavBar, ProtectedRoutes } from "./components/Index";
-import { useSelector } from "react-redux";
+} from './pages/Index';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import { LoadingScreen, NavBar, ProtectedRoutes } from './components/Index';
+import { useSelector } from 'react-redux';
 
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
 
   return (
     <HashRouter>
-      <Container>
-        {isLoading && <LoadingScreen />}
+      {isLoading && <LoadingScreen />}
+      <Container className="container">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
