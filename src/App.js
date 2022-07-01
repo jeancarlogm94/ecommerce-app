@@ -18,8 +18,8 @@ function App() {
 
   return (
     <HashRouter>
-      {isLoading && <LoadingScreen />}
       <Container className="container">
+        {isLoading && <LoadingScreen />}
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
