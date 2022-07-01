@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { getCart } from "../store/slices/cart.slice";
-import Cart from "./Cart";
+import React, { useEffect, useState } from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getCart } from '../store/slices/cart.slice';
+import Cart from './Cart';
 
 const NavBar = () => {
   // const logOut = () => {
@@ -18,11 +18,11 @@ const NavBar = () => {
   const handleClose = () => setShow(false);
 
   const handleShow = () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token) {
       setShow(true);
     } else {
-      navigate("/login");
+      navigate('/login');
     }
   };
 
@@ -35,7 +35,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar
-        style={{ borderRadius: "5px" }}
+        style={{ borderRadius: '5px' }}
         className="p-3"
         collapseOnSelect
         expand="lg"
